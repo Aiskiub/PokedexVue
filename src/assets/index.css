@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --clr-black: #1c1c1c;
+  --clr-gray: #ececec;
+  --clr-white: #f7f7f7;
+
+  --type-normal: #a8a878;
+  --type-fire: #f08030;
+  --type-water: #6890f0;
+  --type-grass: #78c850;
+  --type-electric: #f8d030;
+  --type-ice: #98d8d8;
+  --type-fighting: #c03028;
+  --type-poison: #a040a0;
+  --type-ground: #e0c068;
+  --type-flying: #a890f0;
+  --type-psychic: #f85888;
+  --type-bug: #a8b820;
+  --type-rock: #b8a038;
+  --type-ghost: #705898;
+  --type-dark: #705848;
+  --type-dragon: #7038f8;
+  --type-steel: #b8b8d0;
+  --type-fairy: #f0b6bc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--clr-black);
+  font-family: "Rubik", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--clr-gray);
+}
+
+header {
+  padding-block: 1rem;
+  box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.5);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-inline: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Estilos para el botón del encabezado */
+.btn-header {
+background-color: var(
+    --clr-gray
+  ); /* Establece el color de fondo del botón como el color definido en --clr-gray */
+  padding: 0.5rem; /* Agrega un espacio interno de 0.5 rem alrededor del contenido del botón */
+  border-radius: 100vmax; /* Establece el radio de borde del botón como el 100% del viewport máximo */
+  cursor: pointer; /* Cambia el cursor del mouse al puntero cuando se pasa sobre el botón */
+  text-transform: uppercase; /* Transforma el texto del botón a mayúsculas */
+  font-weight: 600; /* Establece el grosor de la fuente del botón como 600 (negrita) */
+  box-shadow: 0 0 1rem rgb(0, 0, 0, 0.25);
+}
+
+.btn-header:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 2rem rgb(0, 0, 0, 0.25);
+}
+
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pokemon-todos {
+  display: grid;
+  grid-template-columns: 2fr;
+  gap: 1rem;
+}
+/*aqui hago que despues de determinados pixeles las tarjetas se ubiquen en 2 o solo 1 tarjeta*/
+@media screen and (min-width: 550px) {
+  .pokemon-todos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .pokemon-todos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.pokemon {
+  border-radius: 1rem;
+  background-color: var(--clr-white);
+  box-shadow: 0 0 3rem -1ren rgb(0, 0, 0, 0.25);
+  padding-block: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.pokemon-id-back {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--clr-gray);
+  z-index: -1;
+}
+
+.pokemon-imagen {
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon-imagen img {
+  width: 100%;
+  max-width: 9rem;
+}
+
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-inline: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.nombre-contenedor {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokemon-id {
+  background-color: var(--clr-gray);
+  padding: 0.25rem 0.5rem;
+  border-radius: 100vmax;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.pokemon-nombre {
+  font-size: 1.4rem;
+}
+
+.pokemon-tipos {
+  display: flex; /*que queden uno al aldo del otro */
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tipo {
+  padding: 0.25rem 0.5rem;
+  border-radius: 100vmax;
+}
+
+.pokemon-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  justify-content: center;
+}
+
+.stat {
+  background-color: var(--clr-black);
+  margin: 3px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 100vmax;
+}
+
+.normal {
+  background-color: var(--type-normal);
+  color: var(--clr-black);
+}
+
+.fire {
+  background-color: var(--type-fire);
+  color: var(--clr-black);
+}
+
+.water {
+  background-color: var(--type-water);
+  color: var(--clr-black);
+}
+
+.grass {
+  background-color: var(--type-grass);
+  color: var(--clr-black);
+}
+
+.electric {
+  background-color: var(--type-electric);
+  color: var(--clr-black);
+}
+
+.ice {
+  background-color: var(--type-ice);
+  color: var(--clr-black);
+}
+
+.fighting {
+  background-color: var(--type-fighting);
+  color: var(--clr-black);
+}
+
+.poison {
+  background-color: var(--type-poison);
+  color: var(--clr-black);
+}
+
+.ground {
+  background-color: var(--type-ground);
+  color: var(--clr-black);
+}
+
+.flying {
+  background-color: var(--type-flying);
+  color: var(--clr-black);
+}
+
+.psychic {
+  background-color: var(--type-psychic);
+  color: var(--clr-black);
+}
+
+.bug {
+  background-color: var(--type-bug);
+  color: var(--clr-black);
+}
+
+.rock {
+  background-color: var(--type-rock);
+  color: var(--clr-black);
+}
+
+.ghost {
+  background-color: var(--type-ghost);
+  color: var(--clr-white);
+}
+
+.dark {
+  background-color: var(--type-dark);
+  color: var(--clr-white);
+}
+
+.dragon {
+  background-color: var(--type-dragon);
+  color: var(--clr-white);
+}
+
+.steel {
+  background-color: var(--type-steel);
+  color: var(--clr-black);
+}
+
+.fairy {
+  background-color: var(--type-fairy);
+  color: var(--clr-black);
+}
+
+/* Estilos base para la carta */
+.pokemon {
+  border-radius: 1rem;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Estilos específicos por tipo */
+.pokemon.fire {
+  background: linear-gradient(45deg, #ff4500, #ff8c00);
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.6);
+}
+
+.pokemon.water {
+  background: linear-gradient(45deg, #1e90ff, #00bfff);
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.6);
+}
+
+.pokemon.grass {
+  background: linear-gradient(45deg, #32cd32, #98fb98);
+  box-shadow: 0 0 20px rgba(50, 205, 50, 0.6);
+}
+
+.pokemon.electric {
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+/* Añade más estilos para otros tipos aquí */
+
+/* Efecto de superposición para dar textura */
+.pokemon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("ruta/a/tu/textura.png");
+  opacity: 0.1;
+  z-index: 1;
+}
+
+/* Ajustes para el contenido de la carta */
+.pokemon-imagen,
+.pokemon-info {
+  position: relative;
+  z-index: 2;
+}
+
+.pokemon-nombre,
+.pokemon-id,
+.tipo,
+.stat {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación al pasar el cursor */
+.pokemon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
