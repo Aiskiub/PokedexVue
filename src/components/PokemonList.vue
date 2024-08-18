@@ -2,7 +2,7 @@
   <div>
     <header>
       <nav class="nav">
-        <img src="/images/logo.png" alt="Logo Pokédex" />
+        <img src="/pokedex-vue/images/logo.png" alt="Logo Pokédex" />
         <ul class="nav-list">
           <button
             v-for="tipo in tipos"
